@@ -6,5 +6,8 @@
       "database-rules.json",
       "storage.rules"
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }

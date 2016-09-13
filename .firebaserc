@@ -1,6 +1,5 @@
 {
   "projects": {
-    "restbk": "eddy-mobile",
-    "development": "eddy-mobile"
+    "default": "cloud-demo-eddy"
   }
 }
