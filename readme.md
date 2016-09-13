@@ -7,16 +7,16 @@
 
  `` src="scripts/init.js" ``
 
--- the add the following code with your api key
+-- the add the following code with your api key and attributes form the firebase console  
 
 `` document.addEventListener('DOMContentLoaded', function() { ``   
  ``    console.log("Initialize Firebase");  ``  
   ``   // Initialize Firebase  ``  
   ``   var config = {  ``  
   ``       apiKey: "....  ",  ``  
-  ``       authDomain: "cloud-demo-eddy.firebaseapp.com",  ``  
-  ``       databaseURL: "https://cloud-demo-eddy.firebaseio.com",  ``  
-  ``       storageBucket: "cloud-demo-eddy.appspot.com",  ``  
+  ``       authDomain: "---",  ``  
+  ``       databaseURL: "https://---,  ``  
+  ``       storageBucket: "---",  ``  
   ``   };  ``  
   ``   firebase.initializeApp(config);  ``  
   ``      }, false); ``  
