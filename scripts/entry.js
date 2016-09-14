@@ -21,7 +21,10 @@ function EntryPoint() {
     this.message_form_container = document.getElementById('message_form_container');
     this.message_form = document.getElementById('message_form');
     this.message = document.getElementById('message');
-    // Create new comment.
+
+    this.run_queryButton = document.getElementById('run_query');
+
+    // Create new message.
     this.message_form.onsubmit = function(e) {
         e.preventDefault();
 
@@ -36,6 +39,7 @@ function EntryPoint() {
 
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
+    this.run_queryButton.addEventListener('click', this.runQuery.bind(this));
 
     this.initFirebase();
 };
@@ -52,6 +56,21 @@ EntryPoint.prototype.initFirebase = function() {
     storageRef = firebase.storage().ref();
     // Initiates Firebase auth and listen to auth state changes.
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+};
+
+EntryPoint.prototype.runQuery = function() {
+
+    var recentMessagesRef = firebase.database().ref('messages').limitToLast(100);
+
+    var fetchMessages = function(recentMessagesRef) {
+        recentMessagesRef.on('child_added', function(data) {
+
+            console.log(data.val().text+' '+data.val().author);
+        });
+    };
+
+    fetchMessages(recentMessagesRef);
+
 };
 
 
