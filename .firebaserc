@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "cloud-demo-eddy"
+    "default": "cloud-demo-eddy",
+    "development": "cloud-demo-eddy"
   }
 }
